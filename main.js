@@ -1164,9 +1164,9 @@ onUnload(callback) {
 
         let tmpYear = 1970;
         let tmpYearCount = 0;
+        //Jahreszähler umhängen
+        this.log.debug("set session year data");
         charger_session.forEach(session => {
-            //Jahreszähler umhängen
-            this.log.debug("set session year data");
             if (tmpYear != session.year) {
                 //neues Jahr setzen alles zurück
                 this.setStateAsync(charger.id + ".session." + session.year + ".total_year", session.totalEnergyUsage, true);
